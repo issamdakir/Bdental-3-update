@@ -10,6 +10,11 @@
         "Resources",
         "Bdental_Library"
     ],
+    "lib_archive": [
+        "Resources",
+        "Bdental_Library",
+        "lib_archive"
+    ],
     "BDENTAL_Operators.py": [
         "Operators",
         "BDENTAL_Operators.py"
