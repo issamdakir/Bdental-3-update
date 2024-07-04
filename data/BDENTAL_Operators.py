@@ -46,7 +46,7 @@ DataBlendFile = join(addon_dir, "Resources", "BlendData",
                      "BDENTAL_BlendData.blend")
 bdental_app_template_zip_file = join(
     addon_dir, "Resources", "bdental_app_template.zip")
-lib_name='Bdental_Library'
+BDENTAL_LIB_NAME='Bdental_Library'
 
 # "VGS_Marcos_modified_MinMax"#"VGS_Marcos_modified"  # "VGS_Marcos_01" "VGS_Dakir_01"
 GpShader = "VGS_Dakir_(-400-3000)"#"VGS_Dakir_01"#"VGS_Dakir_MinMax"
@@ -233,14 +233,14 @@ class BDENTAL_OT_AssetBrowserToggle(bpy.types.Operator):
     #     #     return 0
     #     return context.workspace.name == "Bdental Main"
     def defer(self):
-        global lib_name
+        global BDENTAL_LIB_NAME
         params = self.asset_browser_space.params
         if not params:
             return 0
         
 
         try:
-            params.asset_library_ref = lib_name
+            params.asset_library_ref = BDENTAL_LIB_NAME
             
         except TypeError:
             # If the reference doesn't exist.
@@ -255,7 +255,7 @@ class BDENTAL_OT_AssetBrowserToggle(bpy.types.Operator):
             return {'FINISHED'}
         return {'PASS_THROUGH'}
     def execute(self, context):
-        global lib_name
+        global BDENTAL_LIB_NAME
 
         if not context.workspace.name == "Bdental Main" :
             txt = ["Cancelled : Please ensure you are in Bdental Main workspace !"]
@@ -5786,6 +5786,7 @@ class BDENTAL_OT_AddCustomSleeveCutter(bpy.types.Operator):
     #     return True
 
     def modal(self, context, event):
+        global BDENTAL_LIB_NAME
         if self.can_update :
             message = [
             "Select target implant(s)/Fixing sleeves" , "select sleeve cutter from Bdental Library", 
@@ -5805,7 +5806,7 @@ class BDENTAL_OT_AddCustomSleeveCutter(bpy.types.Operator):
                 return {'CANCELLED'}
         elif event.type in {'RET'}:
             if event.value == 'RELEASE':
-                result = get_selected_bdental_assets(lib_name='Bdental Library',area=self.asset_browser_area)
+                result = get_selected_bdental_assets(area=self.asset_browser_area)
                 success, message, error, directory,filename = result.values()
                 if not success :
                     if error == 1:
@@ -5867,14 +5868,14 @@ class BDENTAL_OT_AddCustomSleeveCutter(bpy.types.Operator):
         return {'RUNNING_MODAL'}
 
     def defer(self):
-        global lib_name
+        global BDENTAL_LIB_NAME
         params = self.asset_browser_space.params
         if not params:
             return 0
         
 
         try:
-            params.asset_library_ref = lib_name
+            params.asset_library_ref = BDENTAL_LIB_NAME
             
         except TypeError:
             # If the reference doesn't exist.

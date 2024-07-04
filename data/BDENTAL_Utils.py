@@ -56,8 +56,8 @@ bdental_app_template_zip_file = join(resources, "bdental_app_template.zip")
 path_to_startup = join(resources, "startup.blend")
 DataBlendFile = join(resources, "BlendData",
                      "BDENTAL_BlendData.blend")
-lib_name='Bdental_Library'
-BDENTAL_LIBRARY_PATH = join(resources, lib_name)
+BDENTAL_LIB_NAME='Bdental_Library'
+BDENTAL_LIBRARY_PATH = join(resources, BDENTAL_LIB_NAME)
 
 
 cm_info = {
@@ -82,7 +82,7 @@ def add_bdental_libray():
                 shutil.move(f, BDENTAL_LIBRARY_PATH)
         shutil.rmtree(lib_archive_dir_path)
 
-    user_lib = bpy.context.preferences.filepaths.asset_libraries.get(lib_name) 
+    user_lib = bpy.context.preferences.filepaths.asset_libraries.get(BDENTAL_LIB_NAME) 
     
     if user_lib :
         user_lib.path = BDENTAL_LIBRARY_PATH
@@ -124,7 +124,7 @@ def close_asset_browser(context, area=None):
 
 
 def open_asset_browser():
-    global lib_name
+    global BDENTAL_LIB_NAME
     context = bpy.context
         
     scr = context.screen
@@ -159,7 +159,8 @@ def open_asset_browser():
         return a2,s2
 
 
-def get_selected_bdental_assets(lib_name='Bdental Library', area=None) :
+def get_selected_bdental_assets(area=None) :
+    global BDENTAL_LIB_NAME
     result = {"success":0, "message":"", "error" : 0,"directory":None,"filename":None}
     selected = bpy.context.selected_objects
     if not selected or not [o.get("bdental_type")!="bdental_implant" for o in selected] :
@@ -170,18 +171,18 @@ def get_selected_bdental_assets(lib_name='Bdental Library', area=None) :
     space = area.spaces.active
 
     current_library_name = space.params.asset_library_ref
-    if not current_library_name == lib_name :
-        result["message"]=[f"Warning : The selected asset is not part of {lib_name}","<ENTER> : retry  <ESC> : cancel."]
+    if not current_library_name == BDENTAL_LIB_NAME :
+        result["message"]=[f"Warning : The selected asset is not part of {BDENTAL_LIB_NAME}","<ENTER> : retry  <ESC> : cancel."]
         result["error"] = 2
         return result
 
     asset_file = space.params.filename
     if not asset_file :
-        result["message"]=[f"Warning : Please select asset from {lib_name}","<ENTER> : retry  <ESC> : cancel."]
+        result["message"]=[f"Warning : Please select asset from {BDENTAL_LIB_NAME}","<ENTER> : retry  <ESC> : cancel."]
         result["error"] = 2
         return result
 
-    library_path_root = bpy.context.preferences.filepaths.asset_libraries.get(lib_name).path
+    library_path_root = bpy.context.preferences.filepaths.asset_libraries.get(BDENTAL_LIB_NAME).path
     head, filename = split(asset_file)
     directory = join(library_path_root, head)
     result = {"success":1, "message":"", "error" : 0,"directory":directory,"filename":filename}
