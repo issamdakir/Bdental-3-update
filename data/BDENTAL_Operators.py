@@ -47,6 +47,8 @@ DataBlendFile = join(addon_dir, "Resources", "BlendData",
 bdental_app_template_zip_file = join(
     addon_dir, "Resources", "bdental_app_template.zip")
 BDENTAL_LIB_NAME='Bdental_Library'
+BDENTAL_LIB_UI_NAME='Bdental Library'
+
 
 # "VGS_Marcos_modified_MinMax"#"VGS_Marcos_modified"  # "VGS_Marcos_01" "VGS_Dakir_01"
 GpShader = "VGS_Dakir_(-400-3000)"#"VGS_Dakir_01"#"VGS_Dakir_MinMax"
@@ -233,14 +235,14 @@ class BDENTAL_OT_AssetBrowserToggle(bpy.types.Operator):
     #     #     return 0
     #     return context.workspace.name == "Bdental Main"
     def defer(self):
-        global BDENTAL_LIB_NAME
+        global BDENTAL_LIB_UI_NAME
         params = self.asset_browser_space.params
         if not params:
             return 0
         
 
         try:
-            params.asset_library_ref = BDENTAL_LIB_NAME
+            params.asset_library_ref = BDENTAL_LIB_UI_NAME 
             
         except TypeError:
             # If the reference doesn't exist.
@@ -255,7 +257,7 @@ class BDENTAL_OT_AssetBrowserToggle(bpy.types.Operator):
             return {'FINISHED'}
         return {'PASS_THROUGH'}
     def execute(self, context):
-        global BDENTAL_LIB_NAME
+        global BDENTAL_LIB_UI_NAME
 
         if not context.workspace.name == "Bdental Main" :
             txt = ["Cancelled : Please ensure you are in Bdental Main workspace !"]
