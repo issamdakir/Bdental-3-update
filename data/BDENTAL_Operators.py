@@ -12280,18 +12280,18 @@ class BDENTAL_OT_FilpCameraAxial90Plus(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_axial_checklist = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_axial_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_axial = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_axial.select_set(True)
         context.view_layer.objects.active = camera_axial
@@ -12325,18 +12325,18 @@ class BDENTAL_OT_FilpCameraAxial90Minus(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_axial_checklist = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_axial_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_axial = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_axial.select_set(True)
         context.view_layer.objects.active = camera_axial
@@ -12370,18 +12370,18 @@ class BDENTAL_OT_FilpCameraAxialUpDown(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_axial_checklist = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_axial_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_axial = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_axial.select_set(True)
         context.view_layer.objects.active = camera_axial
@@ -12415,18 +12415,18 @@ class BDENTAL_OT_FilpCameraAxialLeftRight(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_axial_checklist = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_axial_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_axial = [
-            obj for obj in bpy.data.objects if "_AXIAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "AXIAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_axial.select_set(True)
         context.view_layer.objects.active = camera_axial
@@ -12462,18 +12462,18 @@ class BDENTAL_OT_FilpCameraCoronal90Plus(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_coronal_checklist = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_coronal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_coronal = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_coronal.select_set(True)
         context.view_layer.objects.active = camera_coronal
@@ -12507,18 +12507,18 @@ class BDENTAL_OT_FilpCameraCoronal90Minus(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_coronal_checklist = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_coronal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_coronal = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_coronal.select_set(True)
         context.view_layer.objects.active = camera_coronal
@@ -12552,18 +12552,18 @@ class BDENTAL_OT_FilpCameraCoronalUpDown(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_coronal_checklist = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_coronal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_coronal = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_coronal.select_set(True)
         context.view_layer.objects.active = camera_coronal
@@ -12597,18 +12597,18 @@ class BDENTAL_OT_FilpCameraCoronalLeftRight(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_coronal_checklist = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_coronal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_coronal = [
-            obj for obj in bpy.data.objects if "_CORONAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "CORONAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_coronal.select_set(True)
         context.view_layer.objects.active = camera_coronal
@@ -12644,18 +12644,18 @@ class BDENTAL_OT_FilpCameraSagittal90Plus(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_sagittal_checklist = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_sagittal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_sagittal = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
         bpy.ops.object.select_all(action='DESELECT')
         camera_sagittal.select_set(True)
         context.view_layer.objects.active = camera_sagittal
@@ -12689,18 +12689,18 @@ class BDENTAL_OT_FilpCameraSagittal90Minus(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_sagittal_checklist = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_sagittal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_sagittal = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
 
         bpy.ops.object.select_all(action='DESELECT')
         camera_sagittal.select_set(True)
@@ -12735,18 +12735,18 @@ class BDENTAL_OT_FilpCameraSagittalUpDown(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_sagittal_checklist = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_sagittal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_sagittal = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
 
         bpy.ops.object.select_all(action='DESELECT')
         camera_sagittal.select_set(True)
@@ -12781,18 +12781,18 @@ class BDENTAL_OT_FilpCameraSagittalLeftRight(bpy.types.Operator):
     @classmethod
     def poll(cls, context):
         camera_sagittal_checklist = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name]
         slices_pointer_checklist = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name]
         return camera_sagittal_checklist and slices_pointer_checklist
 
     def execute(self, context):
         obj = context.object
         selected_objects = context.selected_objects
         camera_sagittal = [
-            obj for obj in bpy.data.objects if "_SAGITTAL_SLICE_CAM" in obj.name][0]
+            obj for obj in bpy.data.objects if "SAGITTAL_SLICE_CAM" in obj.name][0]
         slices_pointer = [
-            obj for obj in bpy.data.objects if "_SLICES_POINTER" in obj.name][0]
+            obj for obj in bpy.data.objects if "SLICES_POINTER" in obj.name][0]
 
         bpy.ops.object.select_all(action='DESELECT')
         camera_sagittal.select_set(True)
